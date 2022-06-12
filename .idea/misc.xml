@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_home.xml" value="0.2265" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_round_up.xml" value="0.2265" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_search.xml" value="0.2265" />
-        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_store.xml" value="0.2265" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/fragment_list_image.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/menu/drawer_bottom_nav_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>
     </option>
   </component>
