@@ -10,8 +10,6 @@ import androidx.activity.viewModels
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.ui.platform.ViewCompositionStrategy
-import androidx.compose.ui.unit.TextUnit
-import androidx.navigation.NavController
 import com.jordan.jetpacknavigation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.composeCalculateButton.apply {
+        /*binding.composeCalculateButton.apply {
             val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
                 R.id.option_twenty_percent -> 0.20
                 R.id.option_eighteen_percent -> 0.18
@@ -73,10 +71,10 @@ class MainActivity : AppCompatActivity() {
             handleKeyEvent(view, keyCode)
         }
 
-        subscribeToObservables()
+        subscribeToObservables()*/
     }
 
-    private fun subscribeToObservables() {
+    /*private fun subscribeToObservables() {
         viewModel.tipResult.observe(this) {
             binding.tipResult.text = it
         }
@@ -90,5 +88,5 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
-    }
+    }*/
 }
