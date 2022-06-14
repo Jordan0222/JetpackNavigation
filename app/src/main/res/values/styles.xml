@@ -17,4 +17,24 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerSizeBottomLeft">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.CardView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">10%</item>
+        <item name="cornerSizeTopLeft">10%</item>
+        <item name="cornerSizeBottomLeft">10%</item>
+        <item name="cornerSizeBottomRight">10%</item>
+    </style>
 </resources>
