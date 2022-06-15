@@ -1,15 +1,22 @@
 package com.jordan.jetpacknavigation.adapter
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jordan.jetpacknavigation.databinding.WordItemBinding
 import com.jordan.jetpacknavigation.domain.model.WordItem
+import com.jordan.jetpacknavigation.presentation.word_screen.WordFragment
 import javax.inject.Inject
 
-class WordAdapter @Inject constructor(): RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
+class WordAdapter @Inject constructor(
+    private val context: Context,
+): RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     inner class WordViewHolder(val binding: WordItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -45,6 +52,12 @@ class WordAdapter @Inject constructor(): RecyclerView.Adapter<WordAdapter.WordVi
         with(holder) {
             with(items[position]) {
                 binding.button.text = item.word
+                binding.button.setOnClickListener {
+                    val queryUrl: Uri = Uri.parse("${WordFragment.SEARCH_PREFIX}${item.word}")
+                    val intent = Intent(Intent.ACTION_VIEW, queryUrl)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(context, intent, null)
+                }
             }
         }
     }

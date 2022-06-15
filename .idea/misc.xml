@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_grid_layout.xml" value="0.2245" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_home.xml" value="0.2265" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_linear_layout.xml" value="0.2245" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_round_up.xml" value="0.2265" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_search.xml" value="0.2265" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/drawable/ic_store.xml" value="0.2265" />
@@ -16,6 +18,7 @@
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/list_item.xml" value="0.2246376811594203" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/layout/word_item.xml" value="0.2246376811594203" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/menu/drawer_bottom_nav_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/menu/layout_menu.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/asxz0/AndroidStudioProjects/JetpackNavigation/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>
     </option>

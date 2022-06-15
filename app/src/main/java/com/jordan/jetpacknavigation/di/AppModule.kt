@@ -22,5 +22,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideWordAdapter() = WordAdapter()
+    fun provideWordAdapter(
+        @ApplicationContext context: Context
+    ) = WordAdapter(context)
 }
