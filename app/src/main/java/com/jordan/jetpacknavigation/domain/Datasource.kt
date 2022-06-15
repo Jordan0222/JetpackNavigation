@@ -2,6 +2,7 @@ package com.jordan.jetpacknavigation.domain
 
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.domain.model.ListItem
+import com.jordan.jetpacknavigation.domain.model.WordItem
 
 class Datasource {
 
@@ -18,5 +19,15 @@ class Datasource {
             ListItem(R.string.affirmation9, R.drawable.image9),
             ListItem(R.string.affirmation10, R.drawable.image10)
         )
+    }
+
+    fun loadLetters(): List<WordItem> {
+        val letterList = mutableListOf<WordItem>()
+        for (i in 'a'..'z') {
+            letterList.add(
+                WordItem(i.toString())
+            )
+        }
+        return letterList
     }
 }

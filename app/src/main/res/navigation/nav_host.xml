@@ -15,4 +15,9 @@
         android:name="com.jordan.jetpacknavigation.presentation.image_screen.ListImageFragment"
         android:label="fragment_list_image"
         tools:layout="@layout/fragment_list_image" />
+    <fragment
+        android:id="@+id/wordFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.word_screen.WordFragment"
+        android:label="fragment_word"
+        tools:layout="@layout/fragment_word" />
 </navigation>

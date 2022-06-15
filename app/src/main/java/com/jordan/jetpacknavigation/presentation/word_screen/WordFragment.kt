@@ -1,4 +1,4 @@
-package com.jordan.jetpacknavigation.presentation.image_screen
+package com.jordan.jetpacknavigation.presentation.word_screen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,32 +7,31 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.jordan.jetpacknavigation.R
-import com.jordan.jetpacknavigation.adapter.ItemAdapter
-import com.jordan.jetpacknavigation.databinding.FragmentListImageBinding
+import com.jordan.jetpacknavigation.adapter.WordAdapter
+import com.jordan.jetpacknavigation.databinding.FragmentWordBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ListImageFragment : Fragment(R.layout.fragment_list_image) {
+class WordFragment : Fragment() {
 
-    private lateinit var listImageViewModel: ListImageViewModel
+    private lateinit var wordViewModel: WordViewModel
 
-    private var _binding: FragmentListImageBinding? = null
-    private val binding: FragmentListImageBinding
+    private var _binding: FragmentWordBinding? = null
+    private val binding: FragmentWordBinding
         get() = _binding!!
 
     @Inject
-    lateinit var itemAdapter: ItemAdapter
+    lateinit var wordAdapter: WordAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentListImageBinding.inflate(inflater, container, false)
+        _binding = FragmentWordBinding.inflate(inflater, container, false)
 
-        listImageViewModel = ViewModelProvider(requireActivity())[ListImageViewModel::class.java]
+        wordViewModel = ViewModelProvider(requireActivity())[WordViewModel::class.java]
 
         setUpRecyclerView()
         subscribeToObservers()
@@ -41,18 +40,23 @@ class ListImageFragment : Fragment(R.layout.fragment_list_image) {
     }
 
     private fun setUpRecyclerView() = binding.recyclerView.apply {
-        adapter = itemAdapter
+        adapter = wordAdapter
         layoutManager = LinearLayoutManager(requireContext())
     }
 
     private fun subscribeToObservers() {
-        listImageViewModel.listItems.observe(viewLifecycleOwner) {
-            itemAdapter.items = it
+        wordViewModel.wordItems.observe(viewLifecycleOwner) {
+            wordAdapter.items = it
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val LETTER = "letter"
+        const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
 }
