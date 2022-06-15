@@ -63,7 +63,7 @@ class WordFragment : Fragment() {
                     ) {
                         Icon(
                             painter = painterResource(
-                                id = if (wordViewModel.isLinearLayoutManager.value) R.drawable.ic_linear_layout else R.drawable.ic_grid_layout
+                                id = if (wordViewModel.linearState.value) R.drawable.ic_linear_layout else R.drawable.ic_grid_layout
                             ),
                             contentDescription = "layout Button"
                         )

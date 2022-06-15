@@ -1,5 +1,6 @@
 package com.jordan.jetpacknavigation.presentation.word_screen
 
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +20,8 @@ class WordViewModel @Inject constructor(): ViewModel() {
     private val _isLinearLayoutManager = MutableStateFlow(true)
     val isLinearLayoutManager = _isLinearLayoutManager.asStateFlow()
 
+    var linearState = mutableStateOf(true)
+
     init {
         // Initialize data.
         val myDataset = Datasource().loadLetters()
@@ -28,5 +31,6 @@ class WordViewModel @Inject constructor(): ViewModel() {
 
     fun layoutManagerChange() {
         _isLinearLayoutManager.value = !_isLinearLayoutManager.value
+        linearState.value = !linearState.value
     }
 }
