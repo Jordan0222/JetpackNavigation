@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="com.jordan.jetpacknavigation.presentation.word_screen.WordFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.flow_screen.FlowFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
