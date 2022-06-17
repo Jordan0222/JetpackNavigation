@@ -80,10 +80,10 @@ class WordFragment : Fragment() {
 
     private fun setUpRecyclerView() = binding.recyclerView.apply {
         adapter = wordAdapter
-        if (wordViewModel.isLinearLayoutManager.value) {
-            layoutManager = LinearLayoutManager(requireContext())
+        layoutManager = if (wordViewModel.isLinearLayoutManager.value) {
+            LinearLayoutManager(requireContext())
         } else {
-            layoutManager = GridLayoutManager(requireContext(), 3)
+            GridLayoutManager(requireContext(), 3)
         }
     }
 

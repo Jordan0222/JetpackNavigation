@@ -5,15 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.jordan.jetpacknavigation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -25,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.d(Companion.TAG, "onCreate Called")
+        Log.d(TAG, "onCreate Called")
     }
 
     override fun onStart() {
