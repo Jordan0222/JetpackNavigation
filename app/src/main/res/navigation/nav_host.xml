@@ -3,21 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host"
-    app:startDestination="@id/homeFragment">
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.jordan.jetpacknavigation.presentation.home_screen.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/listImageFragment">
     <fragment
         android:id="@+id/listImageFragment"
-        android:name="com.jordan.jetpacknavigation.presentation.image_screen.ListImageFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.image_list_screen.ListImageFragment"
         android:label="fragment_list_image"
-        tools:layout="@layout/fragment_list_image" />
+        tools:layout="@layout/fragment_list_image" >
+        <action
+            android:id="@+id/action_listImageFragment_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="imageText"
+            app:argType="string" />
+    </fragment>
     <fragment
-        android:id="@+id/wordFragment"
-        android:name="com.jordan.jetpacknavigation.presentation.word_screen.WordFragment"
-        android:label="fragment_word"
-        tools:layout="@layout/fragment_word" />
+        android:id="@+id/imageFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.image_screen.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument android:name="imageResource"
+            app:argType="integer" />
+        <argument
+            android:name="imageText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_imageFragment_to_flowFragment"
+            app:destination="@id/flowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/listImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flowFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.flow_screen.FlowFragment"
+        android:label="fragment_flow"
+        tools:layout="@layout/fragment_flow" />
 </navigation>

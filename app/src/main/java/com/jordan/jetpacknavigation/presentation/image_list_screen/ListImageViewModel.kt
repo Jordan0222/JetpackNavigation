@@ -1,4 +1,4 @@
-package com.jordan.jetpacknavigation.presentation.image_screen
+package com.jordan.jetpacknavigation.presentation.image_list_screen
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

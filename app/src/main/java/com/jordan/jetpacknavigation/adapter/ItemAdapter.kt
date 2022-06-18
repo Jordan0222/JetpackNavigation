@@ -3,11 +3,13 @@ package com.jordan.jetpacknavigation.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.jordan.jetpacknavigation.databinding.ListItemBinding
 import com.jordan.jetpacknavigation.domain.model.ListItem
+import com.jordan.jetpacknavigation.presentation.image_list_screen.ListImageFragmentDirections
 import javax.inject.Inject
 
 class ItemAdapter @Inject constructor(
@@ -45,10 +47,19 @@ class ItemAdapter @Inject constructor(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = items[position]
+        val action = ListImageFragmentDirections.actionListImageFragmentToImageFragment(
+            imageResource = item.imageResourceId,
+            imageText = context.resources.getString(item.stringResourceId)
+        )
+
         with(holder) {
             with(items[position]) {
                 binding.itemTitle.text = context.resources.getString(item.stringResourceId)
                 binding.itemImage.setImageResource(item.imageResourceId)
+
+                binding.cardView.setOnClickListener {
+                    holder.itemView.findNavController().navigate(action)
+                }
             }
         }
     }
