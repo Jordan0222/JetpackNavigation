@@ -20,8 +20,6 @@ class WordViewModel @Inject constructor(): ViewModel() {
     private val _isLinearLayoutManager = MutableStateFlow(true)
     val isLinearLayoutManager = _isLinearLayoutManager.asStateFlow()
 
-    var linearState = mutableStateOf(true)
-
     init {
         // Initialize data.
         val myDataset = Datasource().loadLetters()
@@ -31,6 +29,5 @@ class WordViewModel @Inject constructor(): ViewModel() {
 
     fun layoutManagerChange() {
         _isLinearLayoutManager.value = !_isLinearLayoutManager.value
-        linearState.value = !linearState.value
     }
 }
