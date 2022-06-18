@@ -16,9 +16,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <argument
-            android:name="imageText"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
@@ -43,7 +40,17 @@
         android:id="@+id/flowFragment"
         android:name="com.jordan.jetpacknavigation.presentation.flow_screen.FlowFragment"
         android:label="fragment_flow"
-        tools:layout="@layout/fragment_flow" />
+        tools:layout="@layout/fragment_flow" >
+        <action
+            android:id="@+id/action_flowFragment_to_listImageFragment"
+            app:destination="@id/listImageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/listImageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/wordFragment"
         android:name="com.jordan.jetpacknavigation.presentation.word_screen.WordFragment"

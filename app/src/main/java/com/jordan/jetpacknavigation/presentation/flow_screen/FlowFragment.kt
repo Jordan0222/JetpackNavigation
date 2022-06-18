@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.jordan.jetpacknavigation.databinding.FragmentFlowBinding
 import com.jordan.jetpacknavigation.presentation.word_screen.WordViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +30,11 @@ class FlowFragment : Fragment() {
         _binding = FragmentFlowBinding.inflate(inflater, container, false)
 
         flowViewModel = ViewModelProvider(requireActivity())[FlowViewModel::class.java]
+
+        binding.include.back.setOnClickListener {
+            val action = FlowFragmentDirections.actionFlowFragmentToListImageFragment()
+            findNavController().navigate(action)
+        }
 
         binding.composeText.apply {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
