@@ -44,13 +44,13 @@ class FlowViewModel @Inject constructor(): ViewModel() {
         }
 
         // zip: flow2 會等 flow1 再一起 emit
-        /*flow1.zip(flow2) { number1, number2 ->
+        flow1.zip(flow2) { number1, number2 ->
             numberString += "($number1, $number2)\n"
-        }.launchIn(viewModelScope)*/
+        }.launchIn(viewModelScope)
 
         // merge: flow2 不會等 flow1，會直接 emit
-        merge(flow1, flow2).onEach {
+        /*merge(flow1, flow2).onEach {
             numberString += "$it\n"
-        }.launchIn(viewModelScope)
+        }.launchIn(viewModelScope)*/
     }
 }
