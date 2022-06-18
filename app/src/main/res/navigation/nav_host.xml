@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host"
-    app:startDestination="@id/wordFragment">
+    app:startDestination="@id/listImageFragment">
     <fragment
         android:id="@+id/listImageFragment"
         android:name="com.jordan.jetpacknavigation.presentation.image_list_screen.ListImageFragment"
