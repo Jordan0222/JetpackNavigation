@@ -7,11 +7,16 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.replace
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.jordan.jetpacknavigation.databinding.ActivityMainBinding
+import com.jordan.jetpacknavigation.presentation.home_screen.HomeFragment
+import com.jordan.jetpacknavigation.presentation.image_list_screen.ListImageFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +30,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val host: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragmentContainer) as NavHostFragment? ?: return
+
+        navController = host.findNavController()
+
+        binding.bottomNav.setupWithNavController(navController)
 
         Log.d(TAG, "onCreate Called")
     }

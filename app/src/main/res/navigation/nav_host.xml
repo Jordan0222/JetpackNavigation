@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host"
-    app:startDestination="@id/listImageFragment">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/listImageFragment"
         android:name="com.jordan.jetpacknavigation.presentation.image_list_screen.ListImageFragment"
@@ -56,4 +56,8 @@
         android:name="com.jordan.jetpacknavigation.presentation.word_screen.WordFragment"
         android:label="fragment_word"
         tools:layout="@layout/fragment_word" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.home_screen.HomeFragment"
+        android:label="HomeFragment" />
 </navigation>

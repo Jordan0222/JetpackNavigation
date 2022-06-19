@@ -2,11 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_store"
         android:title="Home"/>
 
     <item
         android:id="@+id/listImageFragment"
-        android:icon="@drawable/ic_store"
+        android:icon="@drawable/ic_camera_alt"
         android:title="List Image"/>
+
+    <item
+        android:id="@+id/wordFragment"
+        android:icon="@drawable/ic_linear_layout"
+        android:title="Word"/>
 </menu>
