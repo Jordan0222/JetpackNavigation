@@ -2,6 +2,7 @@ package com.jordan.jetpacknavigation.presentation.word_screen
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -39,18 +40,30 @@ class WordFragment : Fragment() {
 
         wordViewModel = ViewModelProvider(requireActivity())[WordViewModel::class.java]
 
+        binding.toolbar.setOnMenuItemClickListener { item ->
+
+            when (item?.itemId) {
+                R.id.action_switch_layout -> {
+                    wordViewModel.layoutManagerChange()
+                    setUpRecyclerView()
+                    setIcon(item)
+                }
+            }
+            true
+        }
+
         setUpRecyclerView()
         subscribeToObservers()
 
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu, menu)
 
         val layoutButton = menu.findItem(R.id.action_switch_layout)
         setIcon(layoutButton)
-    }
+    }*/
 
     private fun setUpRecyclerView() = binding.recyclerView.apply {
         adapter = wordAdapter
@@ -70,7 +83,7 @@ class WordFragment : Fragment() {
             else ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_grid_layout)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
                 wordViewModel.layoutManagerChange()
@@ -82,7 +95,7 @@ class WordFragment : Fragment() {
 
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 
     private fun subscribeToObservers() {
         wordViewModel.wordItems.observe(viewLifecycleOwner) {
