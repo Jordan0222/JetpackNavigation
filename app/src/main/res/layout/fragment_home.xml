@@ -114,7 +114,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/calculate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/round_up_switch"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
 
         <TextView
@@ -135,6 +135,16 @@
             android:text="@string/home_fragment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tip_result" />
+
+        <Button
+            android:id="@+id/to_pager_activity_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/pager_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_fragment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

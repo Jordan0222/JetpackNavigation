@@ -1,5 +1,6 @@
 package com.jordan.jetpacknavigation.presentation.home_screen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.jordan.jetpacknavigation.MainViewModel
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.databinding.FragmentHomeBinding
+import com.jordan.jetpacknavigation.presentation.pager_screen.PagerActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,6 +46,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 tipPercentage,
                 isChecked
             )
+        }
+
+        binding.toPagerActivityButton.setOnClickListener {
+            val intent = Intent(context, PagerActivity::class.java)
+            startActivity(intent)
         }
 
         subscribeToObservables()

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.JetpackNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.pager_screen.PagerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

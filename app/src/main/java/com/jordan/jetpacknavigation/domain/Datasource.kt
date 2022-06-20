@@ -1,6 +1,7 @@
 package com.jordan.jetpacknavigation.domain
 
 import com.jordan.jetpacknavigation.R
+import com.jordan.jetpacknavigation.domain.model.Intro
 import com.jordan.jetpacknavigation.domain.model.ListItem
 import com.jordan.jetpacknavigation.domain.model.WordItem
 
@@ -29,5 +30,13 @@ class Datasource {
             )
         }
         return letterList
+    }
+
+    fun loadIntroList(): List<Intro> {
+        return listOf(
+            Intro(R.drawable.image1,"Sea", R.string.affirmation1),
+            Intro(R.drawable.image2,"Lake", R.string.affirmation2),
+            Intro(R.drawable.image3,"Sunshine", R.string.affirmation3)
+        )
     }
 }

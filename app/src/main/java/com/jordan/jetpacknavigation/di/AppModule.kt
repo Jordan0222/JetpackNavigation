@@ -1,8 +1,10 @@
 package com.jordan.jetpacknavigation.di
 
 import android.content.Context
+import com.jordan.jetpacknavigation.adapter.IntroAdapter
 import com.jordan.jetpacknavigation.adapter.ItemAdapter
 import com.jordan.jetpacknavigation.adapter.WordAdapter
+import com.jordan.jetpacknavigation.domain.model.Intro
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +27,10 @@ object AppModule {
     fun provideWordAdapter(
         @ApplicationContext context: Context
     ) = WordAdapter(context)
+
+    @Singleton
+    @Provides
+    fun provideIntroAdapter(
+        @ApplicationContext context: Context
+    ) = IntroAdapter(context)
 }
