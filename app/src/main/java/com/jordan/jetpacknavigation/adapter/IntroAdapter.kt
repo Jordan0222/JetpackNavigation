@@ -11,7 +11,8 @@ import com.jordan.jetpacknavigation.domain.model.Intro
 import javax.inject.Inject
 
 class IntroAdapter @Inject constructor(
-    private val context: Context
+    private val context: Context,
+    private val introList: List<Intro>
 ): RecyclerView.Adapter<IntroAdapter.IntroViewHolder>() {
 
     inner class IntroViewHolder(private val binding: ItemViewPagerBinding): RecyclerView.ViewHolder(binding.root) {
@@ -21,23 +22,6 @@ class IntroAdapter @Inject constructor(
             binding.iconIv.setImageResource(intro.photo)
         }
     }
-
-    private val diffCallback = object : DiffUtil.ItemCallback<Intro>() {
-
-        override fun areItemsTheSame(oldItem: Intro, newItem: Intro): Boolean {
-            return oldItem.photo == newItem.photo
-        }
-
-        override fun areContentsTheSame(oldItem: Intro, newItem: Intro): Boolean {
-            return oldItem.hashCode() == newItem.hashCode()
-        }
-    }
-
-    private val differ = AsyncListDiffer(this, diffCallback)
-
-    var items: List<Intro>
-        get() = differ.currentList
-        set(value) = differ.submitList(value)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IntroViewHolder {
         return IntroViewHolder(
@@ -50,10 +34,10 @@ class IntroAdapter @Inject constructor(
     }
 
     override fun onBindViewHolder(holder: IntroViewHolder, position: Int) {
-        holder.bindItem(items[position])
+        holder.bindItem(introList[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return introList.size
     }
 }

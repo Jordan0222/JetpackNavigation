@@ -39,4 +39,28 @@ class Datasource {
             Intro(R.drawable.image3,"Sunshine", R.string.affirmation3)
         )
     }
+
+    fun loadSunshine(): List<Intro> {
+        return listOf(
+            Intro(R.drawable.image1,"Sea and Sunshine", null),
+            Intro(R.drawable.image3,"Sunshine and Mountain", null),
+            Intro(R.drawable.image10,"Sunshine", null)
+        )
+    }
+
+    fun loadMountain(): List<Intro> {
+        return listOf(
+            Intro(R.drawable.image6,"Mountain 1", null),
+            Intro(R.drawable.image7,"Mountain 2", null),
+            Intro(R.drawable.image9,"Mountain 3", null)
+        )
+    }
+
+    fun loadCloud(): List<Intro> {
+        return listOf(
+            Intro(R.drawable.image2,"Cloud 1", null),
+            Intro(R.drawable.image4,"Cloud 2", null),
+            Intro(R.drawable.image8,"Cloud 3", null)
+        )
+    }
 }

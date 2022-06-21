@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.gallery_screen.GalleryActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        app:tabGravity="center"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabIndicatorHeight="3dp"
+        app:layout_constraintBottom_toTopOf="@id/galleryVp">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:id="@+id/galleryVp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

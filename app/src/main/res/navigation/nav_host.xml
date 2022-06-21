@@ -79,4 +79,14 @@
         android:name="com.jordan.jetpacknavigation.presentation.pager_screen.PagerActivity"
         android:label="activity_pager"
         tools:layout="@layout/activity_pager" />
+    <activity
+        android:id="@+id/galleryActivity"
+        android:name="com.jordan.jetpacknavigation.presentation.gallery_screen.GalleryActivity"
+        android:label="activity_gallery"
+        tools:layout="@layout/activity_gallery" />
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.gallery_screen.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" />
 </navigation>
