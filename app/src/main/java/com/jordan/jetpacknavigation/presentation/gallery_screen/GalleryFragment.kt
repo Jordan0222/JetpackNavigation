@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.adapter.IntroAdapter
 import com.jordan.jetpacknavigation.databinding.FragmentGalleryBinding
@@ -18,11 +19,15 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
     private val binding: FragmentGalleryBinding
         get() = _binding!!
 
+    private lateinit var galleryViewModel: GalleryViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+
+        galleryViewModel = ViewModelProvider(requireActivity())[GalleryViewModel::class.java]
 
         return binding.root
     }
@@ -35,9 +40,9 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
 
         pos?.let {
             when (pos) {
-                0 -> viewPager.adapter = IntroAdapter(requireContext(), Datasource().loadCloud())
-                1 -> viewPager.adapter = IntroAdapter(requireContext(), Datasource().loadMountain())
-                2 -> viewPager.adapter = IntroAdapter(requireContext(), Datasource().loadSunshine())
+                0 -> viewPager.adapter = IntroAdapter(requireContext(), galleryViewModel.cloudItems.value)
+                1 -> viewPager.adapter = IntroAdapter(requireContext(), galleryViewModel.mountainItems.value)
+                2 -> viewPager.adapter = IntroAdapter(requireContext(), galleryViewModel.sunshineItems.value)
             }
         }
     }
