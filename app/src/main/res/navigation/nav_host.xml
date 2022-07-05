@@ -89,4 +89,9 @@
         android:name="com.jordan.jetpacknavigation.presentation.gallery_screen.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/buttonFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.button_screen.ButtonFragment"
+        android:label="fragment_button"
+        tools:layout="@layout/fragment_button" />
 </navigation>

@@ -14,4 +14,9 @@
         android:id="@+id/wordFragment"
         android:icon="@drawable/ic_linear_layout"
         android:title="Word"/>
+
+    <item
+        android:id="@+id/buttonFragment"
+        android:icon="@drawable/ic_catching_pokemon"
+        android:title="Button"/>
 </menu>
