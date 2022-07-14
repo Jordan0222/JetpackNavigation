@@ -3,7 +3,7 @@ package com.jordan.jetpacknavigation.presentation.image_list_screen
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.jordan.jetpacknavigation.domain.Datasource
+import com.jordan.jetpacknavigation.data.source.Datasource
 import com.jordan.jetpacknavigation.domain.model.ListItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

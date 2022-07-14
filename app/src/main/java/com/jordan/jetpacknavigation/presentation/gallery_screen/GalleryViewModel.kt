@@ -1,7 +1,7 @@
 package com.jordan.jetpacknavigation.presentation.gallery_screen
 
 import androidx.lifecycle.ViewModel
-import com.jordan.jetpacknavigation.domain.Datasource
+import com.jordan.jetpacknavigation.data.source.Datasource
 import com.jordan.jetpacknavigation.domain.model.Intro
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

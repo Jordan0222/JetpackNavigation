@@ -1,4 +1,4 @@
-package com.jordan.jetpacknavigation.domain
+package com.jordan.jetpacknavigation.data.source
 
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.domain.model.Intro

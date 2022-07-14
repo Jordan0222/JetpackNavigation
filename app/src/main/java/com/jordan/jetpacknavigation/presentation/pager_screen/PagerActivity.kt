@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.jordan.jetpacknavigation.adapter.IntroAdapter
 import com.jordan.jetpacknavigation.databinding.ActivityPagerBinding
-import com.jordan.jetpacknavigation.domain.Datasource
+import com.jordan.jetpacknavigation.data.source.Datasource
 import com.jordan.jetpacknavigation.presentation.gallery_screen.GalleryActivity
 import dagger.hilt.android.AndroidEntryPoint
 

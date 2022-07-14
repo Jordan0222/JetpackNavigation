@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.adapter.IntroAdapter
 import com.jordan.jetpacknavigation.databinding.FragmentGalleryBinding
-import com.jordan.jetpacknavigation.domain.Datasource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
