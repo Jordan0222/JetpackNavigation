@@ -1,4 +1,4 @@
-package com.jordan.jetpacknavigation
+package com.jordan.jetpacknavigation.presentation.home_screen
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
