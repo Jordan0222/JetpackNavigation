@@ -1,9 +1,6 @@
 package com.jordan.jetpacknavigation.presentation.button_screen
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.TaskStackBuilder
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -33,9 +30,10 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentButtonBinding.inflate(inflater, container, false)
 
+        // notification
         createNotificationChannel()
 
         val intent = Intent(requireContext(), MainActivity::class.java)
@@ -56,6 +54,51 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
             .build()
 
         val notificationManager = NotificationManagerCompat.from(requireContext())
+        // ------------------------------------------------------------------------
+
+        // dialog
+        val addContactDialog = AlertDialog.Builder(requireContext())
+            .setTitle("Add contact")
+            .setMessage("Do you want to add Mr. Jordan to your contacts list")
+            .setIcon(R.drawable.ic_home)
+            .setPositiveButton("Yes") { _, _ ->
+                showToast("You added Mr. Jordan to your contact list")
+            }
+            .setNegativeButton("No") { _, _ ->
+                showToast("You didn't add Mr. Jordan to your contact list")
+            }
+            .create()
+
+        val options = arrayOf("First Item", "Second Item", "Third Item")
+        val singleChoiceDialog = AlertDialog.Builder(requireContext())
+            .setTitle("Choose one of this options")
+            .setSingleChoiceItems(options, 0) { _, i ->
+                showToast(options[i])
+            }
+            .setPositiveButton("Accept") { _, _ ->
+                showToast("You accepted the SingleChoiceDialog")
+            }
+            .setNegativeButton("Decline") { _, _ ->
+                showToast("You declined the SingleChoiceDialog")
+            }
+            .create()
+
+        val multiChoiceDialog = AlertDialog.Builder(requireContext())
+            .setTitle("Choose one of this options")
+            .setMultiChoiceItems(options, booleanArrayOf(false, false, false)) { _, i, isChecked ->
+                if (isChecked) {
+                    showToast("You checked ${options[i]}")
+                } else {
+                    showToast("You unchecked ${options[i]}")
+                }
+            }
+            .setPositiveButton("Accept") { _, _ ->
+                showToast("You accepted the MultiChoiceDialog")
+            }
+            .setNegativeButton("Decline") { _, _ ->
+                showToast("You declined the MultiChoiceDialog")
+            }
+            .create()
 
         binding.outlinedButton.setOnClickListener {
             notificationManager.notify(NOTIFICATION_ID, notification)
@@ -64,9 +107,9 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
         binding.toggleButtonGroup.addOnButtonCheckedListener { toggleButtonGroup, checkedId, isChecked ->
             if (isChecked) {
                 when (checkedId) {
-                    R.id.btnAndroid -> showToast("This is Android")
-                    R.id.btnFlutter -> showToast("This is Flutter")
-                    R.id.btnWeb -> showToast("This is Web")
+                    R.id.btnAndroid -> addContactDialog.show()
+                    R.id.btnFlutter -> singleChoiceDialog.show()
+                    R.id.btnWeb -> multiChoiceDialog.show()
                 }
             } else {
                 if (toggleButtonGroup.checkedButtonId == View.NO_ID) {
