@@ -19,4 +19,9 @@
         android:id="@+id/buttonFragment"
         android:icon="@drawable/ic_catching_pokemon"
         android:title="Button"/>
+
+    <item
+        android:id="@+id/imageIntentFragment"
+        android:icon="@drawable/ic_image"
+        android:title="Image Intent"/>
 </menu>

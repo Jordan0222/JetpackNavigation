@@ -69,11 +69,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
-    <fragment
-        android:id="@+id/viewPagerFragment"
-        android:name="com.jordan.jetpacknavigation.presentation.viewpager_screen.ViewPagerFragment"
-        android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
     <activity
         android:id="@+id/pagerActivity"
         android:name="com.jordan.jetpacknavigation.presentation.pager_screen.PagerActivity"
@@ -94,4 +89,9 @@
         android:name="com.jordan.jetpacknavigation.presentation.button_screen.ButtonFragment"
         android:label="fragment_button"
         tools:layout="@layout/fragment_button" />
+    <fragment
+        android:id="@+id/imageIntentFragment"
+        android:name="com.jordan.jetpacknavigation.presentation.image_intent.ImageIntentFragment"
+        android:label="fragment_image_intent"
+        tools:layout="@layout/fragment_image_intent" />
 </navigation>
