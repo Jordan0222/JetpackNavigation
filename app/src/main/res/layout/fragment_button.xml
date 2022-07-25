@@ -8,121 +8,135 @@
         <import type="java.util.List"/>
         <import type="com.jordan.jetpacknavigation.domain.model.UserItem"/>
         <import type="com.jordan.jetpacknavigation.domain.model.MyUtilClass"/>
+        <import type="android.graphics.drawable.Drawable"/>
+        <variable
+            name="drawable"
+            type="Drawable" />
         <variable
             name="user"
             type="UserItem" />
         <variable
             name="userList"
             type="List&lt;UserItem>" />
+        <variable
+            name="viewModel"
+            type="com.jordan.jetpacknavigation.presentation.button_screen.ButtonViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.button_screen.ButtonFragment">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/textButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="Text Button"
-            app:icon="@android:drawable/ic_btn_speak_now"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/outlinedButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Outlined Button"
-            app:icon="@android:drawable/ic_lock_idle_alarm"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textButton"
-            app:strokeColor="#e45762"
-            app:strokeWidth="3dp" />
-
-        <Button
-            android:id="@+id/containedButton"
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Contained Button"
-            app:icon="@drawable/ic_camera_alt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedButton" />
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleButtonGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:singleSelection="true"
-            android:layout_marginTop="60dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containedButton">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".presentation.button_screen.ButtonFragment">
 
             <Button
-                android:id="@+id/btnAndroid"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/textButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Android"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="493dp" />
+                android:layout_marginTop="60dp"
+                android:text="Text Button"
+                app:icon="@android:drawable/ic_btn_speak_now"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btnFlutter"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/outlinedButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flutter"
-                tools:layout_editor_absoluteX="173dp"
-                tools:layout_editor_absoluteY="493dp" />
+                android:layout_marginTop="30dp"
+                android:text="Outlined Button"
+                app:icon="@android:drawable/ic_lock_idle_alarm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textButton"
+                app:strokeColor="#e45762"
+                app:strokeWidth="3dp" />
 
             <Button
-                android:id="@+id/btnWeb"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/containedButton"
+                style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
-                tools:layout_editor_absoluteX="290dp"
-                tools:layout_editor_absoluteY="488dp" />
+                android:layout_marginTop="30dp"
+                android:text="Contained Button"
+                app:icon="@drawable/ic_camera_alt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedButton" />
 
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButtonGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/containedButton">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@{MyUtilClass.changeText(user.firstName)}"
-            android:visibility="@{user.loggedIn ? View.VISIBLE : View.GONE}"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup" />
+                <Button
+                    android:id="@+id/btnAndroid"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Android"
+                    tools:layout_editor_absoluteX="54dp"
+                    tools:layout_editor_absoluteY="493dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <Button
+                    android:id="@+id/btnFlutter"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flutter"
+                    tools:layout_editor_absoluteX="173dp"
+                    tools:layout_editor_absoluteY="493dp" />
+
+                <Button
+                    android:id="@+id/btnWeb"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"
+                    tools:layout_editor_absoluteX="290dp"
+                    tools:layout_editor_absoluteY="488dp" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@{viewModel.message}"
+                android:visibility="@{user.loggedIn ? View.VISIBLE : View.GONE}"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

@@ -6,6 +6,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,8 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.ViewModelProvider
 import com.jordan.jetpacknavigation.MainActivity
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.databinding.FragmentButtonBinding
@@ -27,13 +31,20 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
     private val binding: FragmentButtonBinding
         get() = _binding!!
 
+    private lateinit var buttonViewModel: ButtonViewModel
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentButtonBinding.inflate(inflater, container, false)
+        buttonViewModel = ViewModelProvider(requireActivity())[ButtonViewModel::class.java]
 
+        binding.viewModel = buttonViewModel
+        binding.lifecycleOwner = this
+
+//        subscribeToObservables()
         // notification
         createNotificationChannel()
 
@@ -124,6 +135,17 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
             }
         }
 
+        binding.editTextTextPersonName.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(char: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                buttonViewModel.setMessage(char.toString())
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+
+        })
+
         return binding.root
     }
 
@@ -139,6 +161,12 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
             }
             val manager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun subscribeToObservables() {
+        buttonViewModel.message.observe(viewLifecycleOwner) {
+            binding.textView.text = it
         }
     }
 
