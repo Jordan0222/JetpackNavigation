@@ -17,6 +17,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.jordan.jetpacknavigation.MainActivity
 import com.jordan.jetpacknavigation.R
 import com.jordan.jetpacknavigation.databinding.FragmentButtonBinding
+import com.jordan.jetpacknavigation.domain.model.UserItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -99,6 +100,11 @@ class ButtonFragment : Fragment(R.layout.fragment_button) {
                 showToast("You declined the MultiChoiceDialog")
             }
             .create()
+        // ------------------------------------------------------------------------
+
+        // data binding
+        val myUser = UserItem("John", "Doe", 25, true)
+        binding.user = myUser
 
         binding.outlinedButton.setOnClickListener {
             notificationManager.notify(NOTIFICATION_ID, notification)
