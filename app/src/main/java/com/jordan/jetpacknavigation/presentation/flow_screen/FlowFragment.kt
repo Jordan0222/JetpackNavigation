@@ -26,7 +26,7 @@ class FlowFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFlowBinding.inflate(inflater, container, false)
 
         flowViewModel = ViewModelProvider(requireActivity())[FlowViewModel::class.java]
