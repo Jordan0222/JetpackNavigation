@@ -35,7 +35,7 @@ class MainViewModel @Inject constructor(): ViewModel() {
     }
 
     override fun onCleared() {
-        Log.d("MainViewModel Lifecycle", "onCleared: ")
+        Log.d("MainViewModel Lifecycle", "onCleared: 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")
         super.onCleared()
     }
 }
