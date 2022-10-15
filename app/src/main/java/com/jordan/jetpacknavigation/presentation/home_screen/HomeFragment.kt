@@ -2,6 +2,7 @@ package com.jordan.jetpacknavigation.presentation.home_screen
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -15,6 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
+    private val TAG = "HomeFragment Lifecycle"
+
     private lateinit var mainViewModel: MainViewModel
 
     private var _binding: FragmentHomeBinding? = null
@@ -25,7 +28,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        Log.d(TAG, "onCreateView: ")
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
@@ -62,7 +66,28 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
+    override fun onStart() {
+        Log.d(TAG, "onStart: ")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Log.d(TAG, "onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(TAG, "onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(TAG, "onStop: ")
+        super.onStop()
+    }
+
     override fun onDestroyView() {
+        Log.d(TAG, "onDestroyView: ")
         super.onDestroyView()
         _binding = null
     }

@@ -1,5 +1,6 @@
 package com.jordan.jetpacknavigation.presentation.home_screen
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -31,5 +32,10 @@ class MainViewModel @Inject constructor(): ViewModel() {
 
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         _tipResult.postValue(formattedTip)
+    }
+
+    override fun onCleared() {
+        Log.d("MainViewModel Lifecycle", "onCleared: ")
+        super.onCleared()
     }
 }
